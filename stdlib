@@ -1,0 +1,36 @@
+# vim: ft=sh
+
+# SHLIB STDLIB
+#
+# Standard functions for common ops
+
+# Usage: is-set $myvar
+is-set() {
+    declare -p "$1" &>/dev/null
+}
+
+# Usage: in-array $array "search"
+in-array() {
+  EMPTY=()
+  ARR="${1:-$EMPTY}" ; shift
+  SEARCH="${1:-''}" ; shift
+  [[ " ${ARR[*]} " =~ " ${SEARCH} " ]]
+}
+
+# TODO: this is... annoyingly hard
+#is-array() { }
+
+# USAGE: dump-array IDENTIFIER VARNAME
+dump-array() {
+  PREFIX="${1:-'ARR'}" ; shift
+  VAR="${1}" ; shift
+  ARR="${!VAR}"
+  printf "$PREFIX: %s\n" ${ARR[@]}
+}
+
+upfind() {
+  while [[ $PWD != / ]] ; do
+      find "$PWD"/ -maxdepth 1 "$@"
+      cd ..
+  done
+}

@@ -66,8 +66,7 @@ relies on it, it goes in stdlib, otherwise it goes in a separate lib.
 NAME | Description
 ---- | -----------
 color | Variables for easy script colorisation, from [cxyokk/color.sh](https://github.com/cxyokk/color.sh/blob/master/terminal-control.sh)
-paths | Provides `PATH_` variables to find relative files to the script, parent folder (ie where the script is in `./bin`), and execution
-context.
+paths | Provides `PATH_` variables to find relative files to the script, parent folder (ie where the script is in `./bin`), and execution context.
 localenv | source a `.env` file thats adjacent to your scripts for shared vars
 init | Script default things, `set -e` and similar.
 pprint | Pretty print output functions

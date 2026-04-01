@@ -20,7 +20,7 @@ all_shlibs=($(
 arg_shlibs=$@
 
 # default libs if you spec none
-default_shlibs=(paths localenv)
+default_shlibs=(init paths localenv)
 
 # operating set is args, unless none then default
 get_shlibs=( "${arg_shlibs[@]:-"${default_shlibs[@]}"}" )
